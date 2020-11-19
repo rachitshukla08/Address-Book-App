@@ -128,3 +128,16 @@ function createAndUpdateStorage(){
     alert(addressBookList.toString());
     localStorage.setItem("AddressBookList",JSON.stringify(addressBookList));
 }
+
+function resetForm(){
+    document.querySelector("#name").value = "";
+    document.querySelector('#phone').value = "";
+    document.querySelector('#address').value= "";
+    document.querySelector('#city').value = "";
+    document.querySelector('#state').value= "";
+    document.querySelector('#zip').value= "";
+}
+
+function cancel(){
+    window.location.replace(site_properties.home_page);
+}

@@ -42,9 +42,10 @@ body{
     justify-content: center;
     align-items: center;
     border:0px solid green;
+    padding-bottom: 20px;
 }
 .form{
-    width: 65%;
+    width: 75%;
     background: #ffffff 0% 0% no-repeat padding-box;
     box-shadow: 1px solid #00000029;
     border: 1px solid #f5f5f5;
@@ -63,7 +64,7 @@ body{
     opacity: 1;
 }
 .form-head-text{
-    margin-left: 30%;
+    margin-left: 34%;
     text-align: center;
     font: normal normal normal 28px/37px Roboto;
     letter-spacing: 0px;
