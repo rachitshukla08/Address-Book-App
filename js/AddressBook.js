@@ -1,4 +1,5 @@
 let addressObj ={};
+let isUpdate = false;
 
 window.addEventListener("DOMContentLoaded",(event)=>{
     const name = document.querySelector('#name');
@@ -24,6 +25,7 @@ window.addEventListener("DOMContentLoaded",(event)=>{
                 errorField.textContent="Invalid entry";
         });
     }
+    checkForUpdate();
 });
 //Address Book Contact
 class Contact{
@@ -157,4 +159,21 @@ function resetForm(){
 
 function cancel(){
     window.location.replace(site_properties.home_page);
+}
+
+const checkForUpdate = () =>{
+    const contactJSON = localStorage.getItem('editEmp');
+    isUpdate = contactJSON ? true :false;
+    if(!isUpdate) return;
+    addressObj = JSON.parse(contactJSON);
+    setForm();
+}
+
+const setForm = () =>{
+    document.querySelector('#name').value = addressObj._name;
+    document.querySelector('#phone').value = addressObj._phone;
+    document.querySelector('#address').value= addressObj._address;
+    document.querySelector('#city').value = addressObj._city;
+    document.querySelector('#state').value = addressObj._state;
+    document.querySelector('#zip').value = addressObj._zip;
 }

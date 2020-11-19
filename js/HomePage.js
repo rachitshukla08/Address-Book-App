@@ -48,3 +48,11 @@ const remove = (node) => {
   document.querySelector('.add-count').textContent = addressBookList.length;
   createInnerHtml();
 }
+
+const update = (node) => {
+  let contactData = addressBookList.find(contact => contact._id == node.id);
+  if(!contactData) 
+      return;
+  localStorage.setItem('editEmp',JSON.stringify(contactData))
+  window.location.replace(site_properties.add_contact_page);
+}

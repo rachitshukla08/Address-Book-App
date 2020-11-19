@@ -130,6 +130,7 @@ select{
     justify-content: end;
     align-items: right;
     margin-top: 20px;
+    opacity: 1;
 }
 .button{
     font: normal normal normal 20px/26px Roboto;
@@ -144,6 +145,7 @@ select{
     border: 1px solid #969696;
     cursor: pointer;
     border-radius: 5%;
+    background: #E2E2E2 0% 0% no-repeat padding-box;
 }
 .submit-reset{
     width: 100%;
@@ -153,7 +155,8 @@ select{
     margin-bottom: 20px;
 }
 error-output{
-    margin-left: 10px;
+    margin-top:10px;
+    margin-left: 5px;
     font-size: 12px;
     font-style: italic;
     color: red;
