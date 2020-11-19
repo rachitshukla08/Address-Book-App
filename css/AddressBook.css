@@ -151,6 +151,12 @@ select{
     justify-content: space-evenly;
     margin-bottom: 20px;
 }
+error-output{
+    margin-left: 10px;
+    font-size: 12px;
+    font-style: italic;
+    color: red;
+}
 @media only screen and (max-width: 1180px){
     .form-head-text{
         margin-left: 25%;
