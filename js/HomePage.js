@@ -20,9 +20,9 @@ const createInnerHtml = () => {
       <td>${contact._zip}</td>
       <td>${contact._phone}</td>
       <td>
-          <img id="1" onclick="remove(this)" alt="delete"
+          <img id="${contact._id}" onclick="remove(this)" alt="delete"
               src="../assets/icons/delete-black-18dp.svg">
-          <img id="1" alt="edit" onclick="update(this)" 
+          <img id="${contact._id}" alt="edit" onclick="update(this)" 
               src="../assets/icons/create-black-18dp.svg">
       </td>
       </tr>
@@ -30,29 +30,21 @@ const createInnerHtml = () => {
     }
     document.querySelector('#table-display').innerHTML = innerHtml;
 }
-const createContactsJSON = () => {
-  let addressBookListLocal = [
-      {
-          _name: "Rachit",
-          _address: "E-8/123",
-          _city: "Bhopal",
-          _state: "Madhya Pradesh",
-          _zip: "432432",
-          _phone: "9191919191"
-      },
-      {
-        _name: "Rachit 2",
-        _address: "E-8/123 2",
-        _city: "Bhopal 2",
-        _state: "Madhya Pradesh 2",
-        _zip: "432439",
-        _phone: "9191919199"
-    },
-  ];
-  return addressBookListLocal;
-}
 
 const getContactDataFromStorage = () => {
   return localStorage.getItem('AddressBookList')?
                               JSON.parse(localStorage.getItem('AddressBookList')):[];
+}
+
+const remove = (node) => {
+  let contactData = addressBookList.find(contact => contact._id == node.id);
+  if(!contactData) 
+      return;
+  const index = addressBookList.map(contact=>contact._id)
+                              .indexOf(contactData._id);
+  console.log(index);
+  addressBookList.splice(index,1);
+  localStorage.setItem('AddressBookList',JSON.stringify(addressBookList));
+  document.querySelector('.add-count').textContent = addressBookList.length;
+  createInnerHtml();
 }

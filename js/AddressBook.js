@@ -34,8 +34,15 @@ class Contact{
         this.city = params[3];
         this.state = params[4];
         this.zip = params[5];
+        this.id = params[6];
     }
     //getters and setters
+    get id(){
+        return this._id;
+    }
+    set id(id){
+        this._id = id;
+    }
     get name(){
         return this._name;
     }
@@ -83,7 +90,7 @@ class Contact{
     }
     toString(){
         return "\nName: "+this.name + ", Address: "+this.address+", City: "+this.city+", State: "
-                +this.state+", Zip: "+this.zip+", Phone: "+this.phone;
+                +this.state+", Zip: "+this.zip+", Phone: "+this.phone +", ID: "+this.id;
     }
 }
 
@@ -99,6 +106,7 @@ function save(event){
     if(addressObj.name!=undefined&&addressObj.phone!=undefined&&addressObj.address!=undefined)
         createAndUpdateStorage();
     addressObj= undefined;
+    resetForm();
 }
 
 function setAddressObject() {
@@ -109,7 +117,16 @@ function setAddressObject() {
     const state = document.querySelector('#state').value;
     const zip = document.querySelector('#zip').value;
     try{
-        addressObj = new Contact(name,phone,address,city,state,zip);
+        if(addressObj._id==undefined){
+            let id1 = new Date().getTime();
+            console.log(id1);
+            addressObj = new Contact(name,phone,address,city,state,zip,id1);
+            console.log("ID : "+addressObj._id);
+        }
+        else {
+            let id = addressObj._id;
+            addressObj = new Contact(name,phone,address,city,state,zip,id);
+        }
     }catch(e){
         alert("Please enter proper details");
         console.error(e);
