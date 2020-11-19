@@ -96,6 +96,9 @@ function save(event){
     }
     alert(addressObj.toString());
     console.log(addressObj.toString());
+    if(addressObj.name!=undefined&&addressObj.phone!=undefined&&addressObj.address!=undefined)
+        createAndUpdateStorage();
+    addressObj= undefined;
 }
 
 function setAddressObject() {
@@ -111,4 +114,17 @@ function setAddressObject() {
         alert("Please enter proper details");
         console.error(e);
     }
+}
+
+function createAndUpdateStorage(){
+    let addressBookList = JSON.parse(localStorage.getItem("AddressBookList"));
+
+    if(addressBookList!=undefined){
+        addressBookList.push(addressObj);
+    }
+    else{
+        addressBookList = [addressObj];
+    }
+    alert(addressBookList.toString());
+    localStorage.setItem("AddressBookList",JSON.stringify(addressBookList));
 }
