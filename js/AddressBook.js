@@ -139,7 +139,16 @@ function createAndUpdateStorage(){
     let addressBookList = JSON.parse(localStorage.getItem("AddressBookList"));
 
     if(addressBookList!=undefined){
-        addressBookList.push(addressObj);
+        let contactData = addressBookList.find(contact=>contact._id ==addressObj._id);
+        console.log(contactData);
+        if(!contactData){
+            addressBookList.push(addressObj);
+            console.log("PUSHED");
+        } else {
+            const index = addressBookList.map(contact=>contact._id).indexOf(addressObj._id);
+            addressBookList.splice(index,1,addressObj);
+            console.log("SPLICED");
+        }
     }
     else{
         addressBookList = [addressObj];
@@ -162,7 +171,7 @@ function cancel(){
 }
 
 const checkForUpdate = () =>{
-    const contactJSON = localStorage.getItem('editEmp');
+    const contactJSON = localStorage.getItem('editContact');
     isUpdate = contactJSON ? true :false;
     if(!isUpdate) return;
     addressObj = JSON.parse(contactJSON);
