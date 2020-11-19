@@ -28,14 +28,90 @@
                 <img class="cross-icon" src="../assets/images/cross.png">
               </div>
           </div>
-          <div class="row-content">
+          <div class="col-content">
             <label class="label text" for="name">Full Name</label>
-            <input class="input" type="text" id="name" name="name" required>
+            <input class="input" type="text" id="name" name="name" placeholder = "Full Name..." required>
           </div>
-          <div class="row-content">
+          <div class="col-content">
             <label class="label text" for="phone">Phone Number</label>
-            <input class="input" type="tel" id="phone" name="phone" required>
+            <input class="input" type="tel" id="phone" name="phone" placeholder="Phone Number..." required>
           </div>
+          <div class="col-content">
+            <label class="label text" for="address">Address</label>
+            <textarea id="address" class="input" name="address" placeholder="Address..." style="height:100px"></textarea>
+          </div>
+          <div class="col-content">
+            <div class="row-content">
+              <div class="label text">
+                  <label for="city">City</label>
+                  <select class="select" id="city" name="city" required>
+                      <option value="" disabled selected>Select City</option>
+                      <option value="Ahmedabad">Ahmedabad</option>
+                      <option value="Allahabad">Allahabad</option>
+                      <option value="Amritsar">Amritsar</option>
+                      <option value="Bhopal">Bhopal</option>
+                      <option value="Central Delhi">Central Delhi</option>
+                      <option value="Chennai">Chennai</option>
+                      <option value="Cuttack">Cuttack</option>Dehradun
+                      <option value="Dehradun">Dehradun</option>Gandhinagar
+                      <option value="Gandhinagar">Gandhinagar</option>
+                      <option value="Hyderabad">Hyderabad</option>
+                      <option value="Pune">Pune</option>
+                  </select>
+              </div>
+              <div class="label text">
+                  <label for="city">Select State</label>
+                    <select name="state" id="state" required>
+                      <option value="" disabled selected>Select State</option>
+                      <option value="Andhra Pradesh">Andhra Pradesh</option>
+                      <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                      <option value="Assam">Assam</option>
+                      <option value="Bihar">Bihar</option>
+                      <option value="Chandigarh">Chandigarh</option>
+                      <option value="Chhattisgarh">Chhattisgarh</option>
+                      <option value="Daman and Diu">Daman and Diu</option>
+                      <option value="Delhi">Delhi</option>
+                      <option value="Lakshadweep">Lakshadweep</option>
+                      <option value="Puducherry">Puducherry</option>
+                      <option value="Goa">Goa</option>
+                      <option value="Gujarat">Gujarat</option>
+                      <option value="Haryana">Haryana</option>
+                      <option value="Himachal Pradesh">Himachal Pradesh</option>
+                      <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                      <option value="Jharkhand">Jharkhand</option>
+                      <option value="Karnataka">Karnataka</option>
+                      <option value="Kerala">Kerala</option>
+                      <option value="Madhya Pradesh">Madhya Pradesh</option>
+                      <option value="Maharashtra">Maharashtra</option>
+                      <option value="Manipur">Manipur</option>
+                      <option value="Meghalaya">Meghalaya</option>
+                      <option value="Mizoram">Mizoram</option>
+                      <option value="Nagaland">Nagaland</option>
+                      <option value="Odisha">Odisha</option>
+                      <option value="Punjab">Punjab</option>
+                      <option value="Rajasthan">Rajasthan</option>
+                      <option value="Sikkim">Sikkim</option>
+                      <option value="Tamil Nadu">Tamil Nadu</option>
+                      <option value="Telangana">Telangana</option>
+                      <option value="Tripura">Tripura</option>
+                      <option value="Uttar Pradesh">Uttar Pradesh</option>
+                      <option value="Uttarakhand">Uttarakhand</option>
+                      <option value="West Bengal">West Bengal</option>
+                      </select>
+              </div>
+              <div class="label text">
+                <label for="city">Zip Code</label>
+                <input class="input" type="text" id="zip" name="zip" placeholder = "Zip Code..." required>
+              </div>
+            </div><!--row-content-->
+        </div><!--column content-->
+        <div class="buttonParent">
+          <div class="submit-reset">
+            <div></div><div></div>
+              <button type="submit" class="button submitButton" id="submitButton">Add</button>
+              <button type="reset" class="resetButton button">Reset</button>
+          </div>
+        </div>
       </form>
     </div>
   </body>

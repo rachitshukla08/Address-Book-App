@@ -74,8 +74,9 @@ body{
 .cross-icon{
     width: 44px;
     height: 44px;
+    cursor: pointer;
 }
-.row-content{
+.col-content{
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
@@ -85,6 +86,15 @@ body{
     align-items: left;
     border: 0px solid green;
     padding-top: 10px;
+    padding-bottom: 10px;
+}
+.row-content{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 0px solid #008CFF;
 }
 .label{
     text-align: left;
@@ -99,5 +109,65 @@ body{
     border: 1px solid #BDBDBD;
     border-radius: 3px;
     opacity: 1;
-    height: 50px;
+    height: 30px;
+    padding: 10px;
+}
+select{
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    font: normal normal normal 16px Roboto;
+    letter-spacing: 0px;
+    color: #42515f;
+    background-color: transparent;
+    margin-left: 5px;
+}
+.buttonParent{
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: end;
+    align-items: right;
+    margin-top: 20px;
+}
+.button{
+    font: normal normal normal 20px/26px Roboto;
+    letter-spacing: 0px;
+    color: #42515f;
+    opacity: 1;
+    background: transparent;
+    border: none;
+    font-weight: 400;
+    min-width: 140px;
+    padding: 7px 7px;
+    border: 1px solid #969696;
+    cursor: pointer;
+    border-radius: 5%;
+}
+.submit-reset{
+    width: 100%;
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+}
+@media only screen and (max-width: 1180px){
+    .form-head-text{
+        margin-left: 25%;
+    }
+}
+@media only screen and (max-width: 1000px){
+    .form-head-text{
+        margin-left: 22%;
+    }
+}
+@media only screen and (max-width: 900px){
+    .form-head-text{
+        margin-left: 20%;
+    }
+}
+@media only screen and (max-width: 800px){
+    .form-head-text{
+        margin-left: 17%;
+    }
 }
