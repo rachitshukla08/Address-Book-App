@@ -1,3 +1,5 @@
+let addressObj ={};
+
 window.addEventListener("DOMContentLoaded",(event)=>{
     const name = document.querySelector('#name');
     const textError = document.querySelector(".text-error");   
@@ -82,5 +84,31 @@ class Contact{
     toString(){
         return "\nName: "+this.name + ", Address: "+this.address+", City: "+this.city+", State: "
                 +this.state+", Zip: "+this.zip+", Phone: "+this.phone;
+    }
+}
+
+function save(event){
+    try{
+        setAddressObject();
+    }catch(e){
+        console.log(e);
+        return;
+    }
+    alert(addressObj.toString());
+    console.log(addressObj.toString());
+}
+
+function setAddressObject() {
+    const name = document.querySelector('#name').value;
+    const phone = document.querySelector('#phone').value;
+    const address = document.querySelector('#address').value;
+    const city = document.querySelector('#city').value;
+    const state = document.querySelector('#state').value;
+    const zip = document.querySelector('#zip').value;
+    try{
+        addressObj = new Contact(name,phone,address,city,state,zip);
+    }catch(e){
+        alert("Please enter proper details");
+        console.error(e);
     }
 }
