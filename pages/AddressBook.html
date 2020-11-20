@@ -27,7 +27,7 @@
                 PERSON ADDRESS FORM
               </div> 
               <div>
-                <img class="cross-icon" src="../assets/images/cross.png" onclick="cancel()">
+                <img class="cross-icon" src="../assets/images/cross 5.png" onclick="cancel()">
               </div>
           </div>
           <div class="col-content">
@@ -48,6 +48,7 @@
           <div class="col-content">
             <div class="row-content">
               <div class="label text">
+                <div class="col-content col-select">
                   <label for="city">City</label>
                   <select class="select" id="city" name="city" required>
                       <option value="" disabled selected>Select City</option>
@@ -63,8 +64,10 @@
                       <option value="Hyderabad">Hyderabad</option>
                       <option value="Pune">Pune</option>
                   </select>
+                </div>
               </div>
               <div class="label text">
+                <div class="col-content col-select">
                   <label for="state">Select State</label>
                     <select name="state" id="state" required>
                       <option value="" disabled selected>Select State</option>
@@ -103,16 +106,19 @@
                       <option value="Uttarakhand">Uttarakhand</option>
                       <option value="West Bengal">West Bengal</option>
                       </select>
+                      </div>
               </div>
               <div class="label text">
+                <div class="col-content col-select">
                 <label for="zip">Zip Code</label>
                 <input class="input" type="text" id="zip" name="zip" placeholder = "Zip Code..." required>
+                </div>
               </div>
             </div><!--row-content-->
         </div><!--column content-->
         <div class="buttonParent"><!--Buttons-->
           <div class="submit-reset">
-            <div></div><div></div>
+            <div></div><div></div><div></div><div></div>
               <button type="submit" class="button submitButton" id="submitButton">Add</button>
               <button type="reset" class="resetButton button">Reset</button>
           </div>
